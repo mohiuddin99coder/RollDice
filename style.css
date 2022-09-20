@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Tangerine", cursive;
+  font-weight: 500;
+  height: 100vh;
+  background: linear-gradient(to top right, green, white, rgb(242, 119, 5));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 80rem;
+  height: 50rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 50%;
+  padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* Element */
+.name {
+  position: relative;
+  font-size: 5rem;
+  letter-spacing: 3px;
+  word-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.score {
+  font-size: 6rem;
+  margin-bottom: 15rem;
+}
+
+.player-active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player-active .name {
+  font-size: 6rem;
+  font-weight: 800rem;
+}
+.player-active .score {
+  font-size: 7rem;
+  font-weight: 500rem;
+}
+.player-active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: rgb(112, 190, 245);
+  opacity: 0.8;
+  color: white;
+  width: 40%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.75s;
+}
+.current-label {
+  font-size: 2rem;
+  margin-bottom: 1 rem;
+}
+.current-score {
+  font-size: 3rem;
+}
+
+/* ABSOLUTE Positioned Elements */
+
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.5rem 2rem;
+  border-radius: 10rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+.btn-new {
+  top: 4rem;
+}
+.btn-roll {
+  top: 35rem;
+}
+.btn-hold {
+  top: 42rem;
+}
+.btn:active {
+  transform: translate(-50%, 4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn:focus {
+  outline: none;
+}
+.dice {
+  height: 8rem;
+  width: 8rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+}
+
+.winner {
+  /* border: 2px solid black; */
+  position: absolute;
+  width: 45rem;
+  height: 25rem;
+  text-align: center;
+  padding: 5rem;
+  font-size: 4rem;
+
+  background-color: rgba(172, 205, 240, 0.93);
+  border-radius: 2rem;
+  box-shadow: 0 5rem 5rem rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+.btn-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  color: rgb(112, 170, 220);
+  background-color: rgba(240, 248, 255, 0.911);
+  transition: all 0.2s;
+}
+.close:active {
+  transform: translate(10%, 10%);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn-again {
+  position: absolute;
+  bottom: 5rem;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.553);
+  backdrop-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
